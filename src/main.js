@@ -10,11 +10,11 @@ let skillIcons = "https://raw.githubusercontent.com/McMaldo/skill-icons/main/ico
 let gameList = games.map(game => /*html*/`
   <article class="game-item">
     <h3>${game.name}</h3>
-    <a href="/src/game/${game.url}">
+    <a href="./game/${game.url}">
       View Demo
-      <img src="/public/icon/arrow.svg" alt="open" />
+      <img src="./public/icon/arrow.svg" alt="open" />
     </a>
-    <img class="portrait" src="/public/img/${game.url}.png" alt="${game.name} image" />
+    <img class="portrait" src="./public/img/${game.url}.png" alt="${game.name} image" />
   </article>`
 ).join('');
 
