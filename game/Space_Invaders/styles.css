@@ -1,0 +1,116 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	width: 100%;
+	height: 100vh;
+	background: #010101;
+	color: #ddd;
+	display: grid;
+	place-items: center;
+	padding: 1rem;
+}
+#space {
+	position: relative;
+	width: 100%;
+	max-width: 900px;
+	height: 100%;
+	max-height: 900px;
+	background: url("./img/space.jpg");
+	background-repeat: repeat;
+	overflow: hidden;
+	animation: bgMovement 10s infinite linear;
+}
+@keyframes bgMovement {
+	0% {
+		background-position-y: 0%;
+	}
+	100% {
+		background-position-y: 300%;
+	}
+}
+#space::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+}
+#ship {
+	width: 110px;
+	height: 140px;
+	background: url("./img/ship.png");
+}
+.tie_fighter {
+	width: 40px;
+	height: 40px;
+	background: url("./img/tie_fighter.png");
+}
+.destroyer{
+	width: 300px;
+	height: 450px;
+	background: url("./img/destroyer.png");
+}
+.tie_fighter.explosion {
+	background: url("./img/explosion.gif");
+}
+#ship, .tie_fighter, .destroyer{
+	position: absolute;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	transition: top .1s, left .1s;
+}
+body.devMode{ 
+	#ship, .tie_fighter, .destroyer, .shoot{
+		border: 1px solid #ddd;
+	}
+}
+.shoot {
+	width: 6px;
+	height: 28px;
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	transition: top .2s;
+}
+.shoot::after, .shoot::before {
+	content: "";
+	width: 2px;
+	height: 28px;
+	background: linear-gradient(to bottom, #ff3232, #3a0c0c);
+}
+#life{
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	display: flex;
+	align-items: end;
+	gap: 5px;
+}
+#life .heart{
+	display: block;
+	width: 40px;
+	height: 40px;
+	background: url(./img/rebels.png);
+	background-size: 40px 40px;
+	background-position: right;
+}
+#score{
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	display: flex;
+	font-size: 2rem;
+}
+#score::before{
+	content: "";
+	width: 2.5rem;
+	height: 2.5rem;
+	background: url(./img/tie_pilot.webp);
+	background-size: contain;
+}
