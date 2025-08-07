@@ -55,8 +55,8 @@ body{
 	height: 450px;
 	background: url("./img/destroyer.png");
 }
-.tie_fighter.explosion {
-	background: url("./img/explosion.gif");
+.explosion {
+	background-image: url("./img/explosion.gif");
 }
 #ship, .tie_fighter, .destroyer{
 	position: absolute;
