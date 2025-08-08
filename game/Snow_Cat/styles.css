@@ -1,0 +1,28 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	width: 100%;
+	height: 100vh;
+	display: grid;
+	place-items: center;
+}
+#background{
+	position: relative;
+	width: 100%;
+	max-width: 900px;
+	height: 100%;
+	max-height: 750px;
+	border: 3px solid #17bce6;
+	background-image: url(./img/grass.jpg);
+}
+#cat{
+	position: absolute;
+	width: 60px;
+	height: 50px;
+	background: url("img/abajo1.png") no-repeat;
+	background-size: contain;
+	transition: all .1s;
+}

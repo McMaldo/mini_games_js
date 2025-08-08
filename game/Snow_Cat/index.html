@@ -4,80 +4,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Juego del Gato</title>
-	<style>
-		*{
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
-		body{
-			width: 100%;
-			height: 100vh;
-			display: grid;
-			place-items: center;
-		}
-		#background{
-			position: relative;
-			width: 100%;
-			max-width: 900px;
-			height: 100%;
-			max-height: 750px;
-			border: 3px solid #17bce6;
-			background-image:url(./img/grass.jpg);
-		}
-		#gatito{
-			position: absolute;
-			top: 150px;
-			left: 150px;
-			width: 60px;
-			height: 50px;
-			background: url("img/abajo1.png") no-repeat;
-			background-size: contain;
-			transition: all .1s;
-		}
-	</style>
+	<link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 	<div id="background">
-		<div id='gatito'></div>
+		<div id='cat'></div>
 	</div>
-	<script type="text/javascript">
-		var posicionIzq = 150;
-		var posicionArriba = 150;
-		var movimiento = 1;
-
-		let bg = document.getElementById('background');
-
-		document.onkeydown = function(e){
-			if (movimiento == 1){
-				movimiento = 2;
-			} else if (movimiento == 2){
-				movimiento = 1;
-			}
-			if(e.keyCode == 37 && posicionIzq > 0) {
-				// Izquierda
-				posicionIzq = posicionIzq - 25;
-				document.getElementById("gatito").style.left = posicionIzq+"px";
-				document.getElementById("gatito").style.backgroundImage = "url('img/izq"+movimiento+".png')";
-			} else if (e.keyCode == 39 && posicionIzq < bg.offsetWidth-60) {
-				// Derecha
-				posicionIzq = posicionIzq + 25;
-				document.getElementById("gatito").style.left = posicionIzq+"px";
-				document.getElementById("gatito").style.backgroundImage = "url('img/der"+movimiento+".png')";
-			} else if (e.keyCode == 38 && posicionArriba > 0) {
-				// Arriba
-				posicionArriba = posicionArriba - 25;
-				document.getElementById("gatito").style.top = posicionArriba+"px";
-				document.getElementById("gatito").style.backgroundImage = "url('img/arriba"+movimiento+".png')";
-				// Ahora nuestro gato cuando se mueve hacia arriba cambia de imagen hacia esa dirección.
-			} else if (e.keyCode == 40 && posicionArriba < bg.offsetWidth-50) {
-				// Abajo
-				posicionArriba = posicionArriba + 25;
-				document.getElementById("gatito").style.top = posicionArriba+"px";
-				document.getElementById("gatito").style.backgroundImage = "url('img/abajo"+movimiento+".png')";
-				// Ahora nuestro gato cuando se mueve hacia abajo cambia de imagen hacia esa dirección.
-			}
-		}
-	</script>
+	<script src="./script.js"></script>
 </body>
 </html>

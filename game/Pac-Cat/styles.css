@@ -1,0 +1,95 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+@font-face{
+	font-family: Arcade;
+	src: url('../../public/font/ka1.ttf');
+}
+body{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: .75rem;
+	background-color: rgb(10, 10, 10);
+	font-family: Arcade;
+	letter-spacing: 5px;
+	color: #f0f0f0;
+}
+h1{
+	font-size: 60px;
+}
+#world{
+	position: relative;
+	user-select: none;
+}
+.fila{
+	line-height: 0;
+}
+#cat {
+	background-image: url('img/cat.gif');
+}
+#dog {
+	background-image: url('img/dog.gif');
+}
+#cat, #dog {
+	background-size: contain;
+	position: absolute;
+	transition: top .2s, left .2s;
+}
+#cat, #dog, .pared, .blank, .burguer, .papitas {
+	height: 40px;
+	width: 40px;
+	display: inline-block;
+}
+.pared {
+	background: purple;
+}
+.burguer {
+	background: url('img/burguer.png');
+}
+.papitas {
+	background: url('img/papitas.png');
+}
+.burguer, .papitas {
+	background-size: 25px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.score{
+	user-select: none;
+	padding: 0 .75rem;
+	display: flex;
+	flex-direction: column;
+	gap: .5rem;
+}
+#vida{
+	display: flex;
+	align-items: center;
+	gap: .75rem;
+}
+#vida img{
+	width: 2rem;
+	height: 2rem;
+	filter: invert(1);
+	transition: filter .5s ease-in-out;
+}
+#vida img.less{
+	filter: invert(0);
+	filter: drop-shadow(0px 2px #fff);
+}
+#retry{
+	background: transparent;
+	font-family: inherit;
+	color: inherit;
+	font-size: 1.25rem;
+	padding: .5rem 1rem;
+	border: 3px solid transparent;
+	cursor: pointer;
+}
+#retry:hover{
+	border-color: #fff;
+}
