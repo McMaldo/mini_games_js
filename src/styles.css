@@ -1,104 +1,143 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
 }
 @font-face {
-    font-family: Minecraft;
-    src: url('../public/font/minecraft/Minecraft.ttf') format('truetype');
+	font-family: Minecraft;
+	src: url('../public/font/minecraft/Minecraft.ttf') format('truetype');
 }
 body{
-    width: 100%;
-    height: 100vh;
-    color: var(--text-color);
-    background: var(--bg-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: Minecraft;
-    letter-spacing: 2px;
+	width: 100%;
+	height: 100vh;
+	color: var(--text-color);
+	background: var(--bg-color);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: Minecraft;
+	letter-spacing: 2px;
 }
 main{
-    width: 100%;
-    max-width: 1180px;
-    min-height: 100%;
-    padding: 20px;
+	width: 100%;
+	max-width: 1180px;
+	min-height: 100%;
+	padding: 20px;
 }
 #heading{
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    grid-template-areas: "img h1" "img p";
-    column-gap: .5rem;
+	display: grid;
+	grid-template-columns: repeat(2, max-content);
+	grid-template-areas: "img h1" "img p";
+	column-gap: .5rem;
 }
 #heading img{
-    grid-area: img;
-    height: 50px;
-    aspect-ratio: 1 / 1;
-    user-select: none;
+	grid-area: img;
+	height: 50px;
+	aspect-ratio: 1 / 1;
+	user-select: none;
 }
 #heading h1{
-    grid-area: h1;
+	grid-area: h1;
 }
 p{
-    grid-area: p;
-    color: var(--text-color-soft);
+	grid-area: p;
+	color: var(--text-color-soft);
 }
 section#game-list{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(13rem, 1fr));
-    gap: 20px;
-    padding: 20px 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+	grid-template-rows: repeat(auto-fit, minmax(13rem, 1fr));
+	gap: 20px;
+	padding: 20px 0;
 }
 article{
-    aspect-ratio: 5 / 3;
-    position: relative;
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    border: var(--card-border);
-    padding: 20px;
+	aspect-ratio: 5 / 3;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border: var(--card-border);
+	padding: 20px;
 }
 article img{
-    user-select: none;
+	user-select: none;
 }
 article img.portrait{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 10rem;
-    object-fit: cover;
-    mask-image: linear-gradient(to bottom, black 40%, transparent);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 10rem;
+	object-fit: cover;
+	mask-image: linear-gradient(to bottom, black 40%, transparent);
+	transition: opacity .2s ease-in-out;
 }
 article *:not(.portrait){
-    z-index: 2;
+	z-index: 2;
+}
+article:hover img.portrait{
+	opacity: .3;
+}
+article .desc{
+	opacity: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+article:hover .desc{
+	opacity: 1;
+}
+article .desc .controls .btn{
+	width: fit-content;
+}
+article .desc .controls,
+article .desc .controls .group,
+article .desc .controls span{
+	display: flex;
+	align-items: center;
+	gap: .5rem;
+}
+article .desc .controls{
+	width: 100%;
+	justify-content: center;
+	align-items: end;
+	gap: 1.5rem;
+	margin: .5rem 0;
+}
+article .desc .controls .group{
+	flex-direction: column;
+}
+article .heading{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 article h3{
-    width: fit-content;
+	width: fit-content;
 }
-article a{
-    display: flex;
-    gap: .25rem;
-    align-items: start;
-    color: var(--text-color-soft);
-    border: 2px solid var(--text-color-soft);
-    padding: 4px 6px 0 6px;
-    box-shadow: 2px 2px var(--text-color-soft);
-    letter-spacing: 1px;
-    user-select: none;
+.btn{
+	cursor: pointer;
+	display: flex;
+	gap: .25rem;
+	align-items: start;
+	color: var(--text-color-soft);
+	border: 2px solid var(--text-color-soft);
+	padding: 4px 6px 0 6px;
+	box-shadow: 2px 2px var(--text-color-soft);
+	letter-spacing: 1px;
+	user-select: none;
 }
-article a:hover{
-    transform: translateY(-2px);
-    box-shadow: 2px 4px var(--text-color-soft);
+.btn:hover{
+	transform: translateY(-2px);
+	box-shadow: 2px 4px var(--text-color-soft);
 }
-article a:active{
-    transform: translateY(0);
-    box-shadow: 2px 2px var(--text-color-soft);
+.btn:active{
+	transform: translateY(0);
+	box-shadow: 2px 2px var(--text-color-soft);
 }
-article a img{
-    width: .75rem;
-    height: .75rem;
-    filter: invert(.69);
+.btn img{
+	width: .75rem;
+	height: .75rem;
+	filter: invert(.69);
 }

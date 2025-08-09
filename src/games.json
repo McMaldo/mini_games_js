@@ -1,5 +1,5 @@
 [
-    {"name": "Pac-Cat", "url": "Pac-Cat"},
-    {"name": "Space invaders", "url": "Space_Invaders"},
-    {"name": "Snow Cat", "url": "Snow_Cat"}
+	{"name": "Snow Cat", "url": "Snow_Cat", "desc": "My first oportunity testing a movement sistem in JS for the next games", "key": null},
+	{"name": "Pac-Cat", "url": "Pac-Cat", "desc": "Similar to the classic Pac-Man, but with a cat being chased by dogs", "key": null},
+	{"name": "Space invaders", "url": "Space_Invaders", "desc": "Based on the classic space invaders but with the Star Wars theme", "key": "space"}
 ]

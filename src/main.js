@@ -9,12 +9,27 @@ let skillIcons = "https://raw.githubusercontent.com/McMaldo/skill-icons/main/ico
 
 let gameList = games.map(game => /*html*/`
   <article class="game-item">
-    <h3>${game.name}</h3>
-    <a href="./game/${game.url}">
-      <img src="./public/icon/arrow.png" alt="" />
-      Play
-    </a>
-    <img class="portrait" src="./public/img/${game.url}.png" alt="${game.name} image" />
+    <div class="desc">
+      <p>${game.desc}</p>
+      <div class="controls">
+        <div class="group">
+          <div class="btn">w</div>
+          <span>
+            <div class="btn">a</div>
+            <div class="btn">s</div>
+            <div class="btn">d</div>
+          </span>
+        </div>
+        ${game.key == "space" ? `<div class="btn">__</div>` : ""}
+      </div>
+    </div>
+    <span class="heading">
+      <h3>${game.name}</h3>
+      ${game.url? `<a href="./game/${game.url}" class="btn">
+        <img src="./public/icon/arrow.png" alt="" />Play
+      </a>` : ""}
+    </span>
+    <img class="portrait" src="./public/img/${game.url}.png" alt="" />
   </article>`
 ).join('');
 
