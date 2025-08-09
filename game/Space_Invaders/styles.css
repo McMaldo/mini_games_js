@@ -3,6 +3,10 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+@font-face {
+	font-family: Minecraft;
+	src: url('../../public/font/minecraft/Minecraft.ttf') format('truetype');
+}
 body{
 	width: 100%;
 	height: 100vh;
@@ -11,6 +15,8 @@ body{
 	display: grid;
 	place-items: center;
 	padding: 1rem;
+	font-family: Minecraft;
+	letter-spacing: 2px;
 }
 #space {
 	position: relative;
@@ -105,7 +111,7 @@ body.devMode{
 	top: 5px;
 	right: 5px;
 	display: flex;
-	font-size: 2rem;
+	font-size: 1.5rem;
 }
 #score::before{
 	content: "";
@@ -113,4 +119,13 @@ body.devMode{
 	height: 2.5rem;
 	background: url(./img/tie_pilot.webp);
 	background-size: contain;
+}
+#gameOver {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 6rem;
+	text-align: center;
+	width: 100%;
 }
